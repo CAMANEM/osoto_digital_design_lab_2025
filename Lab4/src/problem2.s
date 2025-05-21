@@ -1,7 +1,7 @@
 .global _start
 _start:
 
-    MOV R0, #5        @ R0 = factorial_a_calcular = 2
+    MOV R0, #5        @ R0 = factorial_a_calcular
     MOV R1, #1        @ R1 = resultado (inicialmente 1)
     CMP R0, #0        @ if n == 0
     BEQ end_factorial @ Si n == 0 break

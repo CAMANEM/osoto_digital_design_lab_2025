@@ -20,11 +20,18 @@ for:
 if:
     MUL R6, R5, R1      @ R6 = array[i] * y
     STR R6, [R4]        @ array[i] = R6
-    B continue_for
+
+    CMP R2, #9          @ if (i == 9)  
+    BEQ end_for         @ break; (salir del for)
+
+    B continue_for      @ else continue
 
 else:
     ADD R6, R5, R1      @ R6 = array[i] + y
     STR R6, [R4]        @ array[i] = R6
+
+    CMP R2, #69          @ if (i == 9)  
+    BEQ end_for         @ break; (salir del for)
 
 continue_for:
     ADD R2, R2, #1      @ i++
